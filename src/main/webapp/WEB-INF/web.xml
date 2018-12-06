@@ -3,7 +3,7 @@
  "http://java.sun.com/dtd/web-app_2_3.dtd" >
 
 <web-app>
-  <display-name>jlu atm</display-name>
+  <display-name>jlu asm</display-name>
   <!--Spring MVC-->
   <servlet>
     <servlet-name>spring_dispatcher</servlet-name>
