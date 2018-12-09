@@ -1,0 +1,42 @@
+html,
+body {
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+
+.mainpage_main {
+  height: 100%;
+  width: 100%;
+  top: 0;
+  margin-bottom: -40px;
+}
+
+.mainpage_upper {
+  height: 100%;
+  margin-bottom: -40px;
+  width: 100%;
+}
+
+.mainpage_lower {
+  height: 40px;
+  margin-top: -40px;
+  width: 100%;
+  bottom: 0;
+}
+
+.mainpage_lower_desc {
+  height: 100%;
+  max-width:75%;
+  float: left;
+  align-self: left;
+  font-size:20px;
+}
+
+.mainpage_lower_button {
+  min-height: 100%;
+  width: 200px;
+  max-width: 25%;
+  float: right;
+  align-self: right;
+}
