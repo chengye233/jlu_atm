@@ -1,4 +1,5 @@
-﻿<div class="itemlabel bordered color_user">
+﻿<a href="/">
+<div class="itemlabel bordered color_user">
   <div class="itemlabel_thumbnailpic bordered">
     <img class="greyfade fill" src="https://i.ytimg.com/vi/ybhUFrsIONc/maxresdefault.jpg" />
   </div>
@@ -7,3 +8,4 @@
     <div class="itemlabel_outofstock">缺货</div>
   </div>
 </div>
+</a>

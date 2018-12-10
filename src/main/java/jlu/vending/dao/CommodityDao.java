@@ -14,9 +14,9 @@ public interface CommodityDao {
     /**
      * 通过id删{@link Commodity}商品
      * @param id 主键
-     * @return int 删除的数目
+     * @return Integer 删除的数目
      */
-    int deleteById(@Param("id") int id);
+    Integer deleteById(@Param("id") Integer id);
 
 
     /**
