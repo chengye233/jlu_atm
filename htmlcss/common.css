@@ -1,0 +1,25 @@
+﻿.greyfade {
+  -webkit-filter: grayscale(80%);   
+  -moz-filter: grayscale(80%);  
+   -ms-filter: grayscale(80%);   
+  -o-filter: grayscale(80%);     
+     filter: grayscale(80%);
+}
+
+.color_user {
+  background-color: #98C0F0;
+}
+
+.color_admin {
+  background-color: #FFD000;
+}
+
+.bordered {
+  border: 1px;
+  border-style: solid;
+}
+
+.fill {
+  height: 100%;
+  width: 100%;
+}
