@@ -1,5 +1,5 @@
 ﻿<a href="/">
-<div class="itemlabel bordered color_user">
+<div class="itemlabel bordered color_admin">
   <div class="itemlabel_thumbnailpic bordered">
     <img class="greyfade fill" src="https://i.ytimg.com/vi/ybhUFrsIONc/maxresdefault.jpg" />
   </div>
