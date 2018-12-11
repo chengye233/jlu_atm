@@ -23,8 +23,8 @@
 	<!-- 3.定义视图解析器 -->
 	<bean id="viewResolver"
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-		<property name="prefix" value="/WEB-INF/html/"></property>
-		<property name="suffix" value=".html"></property>
+		<property name="prefix" value="/WEB-INF/jsp/"></property>
+		<property name="suffix" value=".jsp"></property>
 	</bean>
 
 	 <!--文件上传解析器 解决因上传文件的文件流导致request空-->
