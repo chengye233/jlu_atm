@@ -12,6 +12,20 @@ import java.util.List;
 public interface CommodityDao {
 
     /**
+     * 增加{@link Commodity}商品
+     * @param commodity 商品对象
+     * @return Integer 添加是商品Id
+     */
+    Integer addCommodity(@Param("com") Commodity commodity);
+
+    /**
+     * 通过id修改{@link Commodity}商品
+     * @param commodity 商品对象
+     * @return Integer 修改的行数
+     */
+    Integer modifyById(@Param("id")Integer id, @Param("com")Commodity commodity);
+
+    /**
      * 通过id删{@link Commodity}商品
      * @param id 主键
      * @return Integer 删除的数目
