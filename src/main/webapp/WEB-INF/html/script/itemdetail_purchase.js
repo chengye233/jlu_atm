@@ -19,6 +19,9 @@ function enablePurchaseBtn(){
 	btn.value="确认购买";
 	btn.disabled=false;
 	//TODO：在此处插入令按钮可按下
-	//btn.onClick=function () {}
+	//btn.onclick=function () {}
 }
 
+document.getElementById('priceText').innerHTML=String(itemPrice.toFixed(2));
+document.getElementById('coinText').innerHTML=String(currentCoinValue.toFixed(2));
+//document.onkeypress=insertCoin;

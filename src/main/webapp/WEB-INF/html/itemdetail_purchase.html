@@ -6,8 +6,7 @@
     <link rel="stylesheet" type="text/css" href="../resources/css/common.css" />
   </head>
 
-  <body>
-      <script src="./script/itemdetail_purchase.js"/>
+  <body onkeypress="insertCoin()">
 
       <div class="itemdetail_left">
         <div align="center" style="margin:5px;">
@@ -15,7 +14,7 @@
           <div class="font30">&lt;此处应有商品名&gt;</div>
           <br/>
           <span class="font20">售价：¥</span>
-          <span class="font20">2.00</span>
+          <span id="priceText" class="font20">2.00</span>
           <br/>
           <br/>
           <div class="itemdetail_thumbnailpic color_user bordered">
@@ -30,7 +29,7 @@
           <br/>
           <div>
             <span class="font30">已投&nbsp;</span>
-            <span id="coinText" onkeypress="insertCoin()" class="font30" style="color: red;">1.50</span>
+            <span id="coinText" class="font30" style="color: red;">1.50</span>
             <span class="font30">&nbsp;元</span>
           </div>
           <br/>
@@ -43,7 +42,7 @@
         </div>
       </div>
 
-
+      <script src="./script/itemdetail_purchase.js"/>
   </body>
 
 </html>
