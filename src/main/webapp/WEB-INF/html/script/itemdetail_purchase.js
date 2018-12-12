@@ -1,7 +1,7 @@
 ﻿var currentCoinValue = 0;
 var itemPrice = 2;//TODO:设置为商品价格
 
-function insertCoin(){
+function insertCoin(event){
 	switch(event.keyCode)
 	{
 		case 65: currentCoinValue+=1; break; //A键
