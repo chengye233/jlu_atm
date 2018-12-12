@@ -7,7 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * {@link CommodityService}实现类
@@ -65,5 +67,36 @@ public class CommodityServiceImpl implements CommodityService {
             return null;
         }
         return commodityDao.selectById(id);
+    }
+
+    /**
+     * 支付
+     * @param id    商品id
+     * @param money 投币金额
+     * @return 结果和找零
+     */
+    @Override
+    public Map<String, Object> pay(Integer id, Double money) {
+        Map<String, Object> resultMap = new HashMap<>();
+        Boolean result = false;
+        Double change = 0.0;
+        // 非法
+        if (id == null || id <= 0 || money == null || money <= 0) {
+            resultMap.put("result", result);
+            return resultMap;
+        }
+        Commodity commodity = commodityDao.selectById(id);
+        // 数量或金额不足
+        if (commodity.getNumber() <= 0 || money < commodity.getPrice()) {
+            resultMap.put("result", result);
+            return resultMap;
+        }
+        commodity.setNumber(commodity.getNumber()-1);
+        commodityDao.modifyById(commodity.getId(), commodity);
+        result = true;
+        change = money - commodity.getPrice();
+        resultMap.put("result", result);
+        resultMap.put("change", change);
+        return resultMap;
     }
 }
