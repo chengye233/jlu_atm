@@ -79,7 +79,7 @@
         </div>
     </div>
     <div class="mainpage_lower_button">
-        <a href="../manage/login.jsp">
+        <a href="../manage/login">
             <button class="fill bordered color_user font20">管理员补货</button>
         </a>
     </div>

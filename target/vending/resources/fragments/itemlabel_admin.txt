@@ -1,0 +1,11 @@
+﻿<a href="/">
+<div class="itemlabel bordered color_admin">
+  <div class="itemlabel_thumbnailpic bordered">
+    <img class="greyfade fill" src="https://i.ytimg.com/vi/ybhUFrsIONc/maxresdefault.jpg" />
+  </div>
+  <div>
+    <div class="itemlabel_price">¥0.00</div>
+    <div class="itemlabel_outofstock">缺货</div>
+  </div>
+</div>
+</a>

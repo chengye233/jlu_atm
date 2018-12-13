@@ -100,3 +100,20 @@ public class CommodityServiceImpl implements CommodityService {
         return resultMap;
     }
 }
+
+    /**
+     * 修改商品
+     * @param commodity 商品
+     * @return 结果和找零
+     */
+    public boolean modifyCommodity(Commodity commodity){
+        if(commodity == null ){
+            return false;
+        }
+        if(commodityDao.selectById(commodity.getId()) == null){
+            commodityDao.addCommodity(commodity);
+        }
+        commodityDao.modifyById(commodity.getId(), commodity);
+        return true;
+    }
+}

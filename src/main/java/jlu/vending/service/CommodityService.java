@@ -42,4 +42,11 @@ public interface CommodityService {
      * @return 结果和找零
      */
     Map<String, Object> pay(Integer id, Double money);
+
+    /**
+     * 修改商品
+     * @param commodity 商品
+     * @return 结果和找零
+     */
+    boolean modifyCommodity(Commodity commodity);
 }
