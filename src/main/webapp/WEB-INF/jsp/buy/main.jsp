@@ -51,7 +51,7 @@
                                                 <%-- 数量 --%>
                                             <c:if test="${commodity.number > 0}">
                                                 <div class="itemlabel_outofstock">
-                                                        ${commodity.number}
+                                                    <span id="commodityNumber">${commodity.number}</span>
                                                 </div>
                                             </c:if>
                                             <c:if test="${commodity.number <= 0}">

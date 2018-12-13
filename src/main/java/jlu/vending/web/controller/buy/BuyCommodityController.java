@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
+import java.text.DecimalFormat;
 import java.util.List;
 import java.util.Map;
 
@@ -78,12 +79,13 @@ public class BuyCommodityController {
                                @RequestParam("id") Integer id, @RequestParam("money") Double money) {
         Map<String, Object> resultMap = commodityService.pay(id, money);
         boolean result = (boolean) resultMap.get("result");
+        DecimalFormat decimalFormat = new DecimalFormat("#.#");
         if (result) {
             double change = (double) resultMap.get("change");
-            model.addAttribute("change", change);
+            model.addAttribute("change", decimalFormat.format(change));
             return "buy/success";
         }
-        model.addAttribute("money", money);
+        model.addAttribute("money", decimalFormat.format(money));
         return "buy/failure";
     }
 }

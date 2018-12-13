@@ -39,4 +39,13 @@
 	<!-- 4.扫描web相关的bean -->
 	<context:component-scan base-package="jlu.vending.web" />
 
+	<!-- 5.拦截器 -->
+	<mvc:interceptors>
+		<mvc:interceptor>
+			<mvc:mapping path="/manage/**"/>
+			<mvc:exclude-mapping path="/manage/login"/>
+			<bean class="jlu.vending.web.interceptor.ManageInterceptor"/>
+		</mvc:interceptor>
+	</mvc:interceptors>
+
 </beans>
