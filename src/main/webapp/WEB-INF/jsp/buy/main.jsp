@@ -68,7 +68,7 @@
         <div style="margin:5px;">16:00 欢迎使用自动售货机，请选择商品</div>
     </div>
     <div class="mainpage_lower_button">
-        <a href="adminlogin.html">
+        <a href="../manage/login.jsp">
             <button class="fill bordered color_user font20">管理员补货</button>
         </a>
     </div>

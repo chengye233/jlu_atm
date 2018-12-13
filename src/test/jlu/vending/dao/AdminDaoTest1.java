@@ -43,4 +43,10 @@ public class AdminDaoTest1 extends BaseTest {
         }
     }
 
+    @Test
+    public void testSelectAdmin() {
+        Admin admin = adminDao.selectByName("maple");
+        assertEquals("123456", admin.getPassword());
+    }
+
 }

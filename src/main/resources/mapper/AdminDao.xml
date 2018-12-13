@@ -8,6 +8,12 @@
         WHERE id = #{id}
     </select>
 
+    <select id="selectByName" resultType="jlu.vending.entity.Admin">
+        SELECT a.id, a.name, a.password
+        FROM admin AS a
+        WHERE name = #{name}
+    </select>
+
     <!-- 插入 -->
     <insert id="insertAdmin" useGeneratedKeys="true" keyProperty="id">
         INSERT INTO
