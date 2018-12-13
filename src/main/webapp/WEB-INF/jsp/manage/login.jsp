@@ -25,7 +25,7 @@
         </div>
       </form>
       <br/>
-      <div align="center"><a href="mainpage.html"><button class="adminlogin_cancelbox  bordered color_user font20">放弃登录</button></a></div>
+      <div align="center"><a href="../buy/main"><button class="adminlogin_cancelbox  bordered color_user font20">放弃登录</button></a></div>
       <br/>
     </div>
 

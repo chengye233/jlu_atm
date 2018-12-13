@@ -1,5 +1,6 @@
 package jlu.vending.web.controller.buy;
 
+import jlu.vending.entity.Admin;
 import jlu.vending.entity.Commodity;
 import jlu.vending.service.AdminService;
 import jlu.vending.service.CommodityService;
@@ -13,6 +14,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -79,7 +81,9 @@ public class ManageCommodityController {
             model.addAttribute("errorMessage", errorMessage);
             returnPage = "manage/login";
         }
-
+        Admin admin = adminService.getAdmin(userid);
+        HttpSession session = request.getSession();
+        session.setAttribute("admin", admin);
         return returnPage;
     }
 
@@ -179,6 +183,6 @@ public class ManageCommodityController {
             model.addAttribute("commodity", new Commodity());
             return "/manage/edit";
         }
-        return "redirect:manage/main";
+        return "redirect:/manage/main";
     }
 }
