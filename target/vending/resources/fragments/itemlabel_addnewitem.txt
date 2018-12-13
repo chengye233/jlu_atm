@@ -1,5 +1,0 @@
-﻿<a href="/">
-<div class="itemlabel bordered">
-  <button class="fill color_admin" style="font-size:100px; color:#FFFFFF">⊕</button>
-</div>
-</a>
