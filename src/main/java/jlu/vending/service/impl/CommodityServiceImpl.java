@@ -99,7 +99,6 @@ public class CommodityServiceImpl implements CommodityService {
         resultMap.put("change", change);
         return resultMap;
     }
-}
 
     /**
      * 修改商品
