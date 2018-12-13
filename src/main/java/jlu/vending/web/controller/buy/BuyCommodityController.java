@@ -12,6 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
+import java.util.Map;
 
 /**
  * 购买商品控制器类
@@ -56,7 +57,7 @@ public class BuyCommodityController {
      *
      * @return buy/info
      */
-    @RequestMapping(value = "/info", method = RequestMethod.POST)
+    @RequestMapping(value = "/info", method = RequestMethod.GET)
     public String commodityInfo(
             HttpServletRequest request,
             @RequestParam(value = "id") Integer id,
@@ -73,7 +74,16 @@ public class BuyCommodityController {
      * @return buy/success || buy/failure
      */
     @RequestMapping(value = "/pay", method = RequestMethod.POST)
-    public String buyCommodity(HttpServletRequest request, Model model) {
-        return null;
+    public String buyCommodity(HttpServletRequest request, Model model,
+                               @RequestParam("id") Integer id, @RequestParam("money") Double money) {
+        Map<String, Object> resultMap = commodityService.pay(id, money);
+        boolean result = (boolean) resultMap.get("result");
+        if (result) {
+            double change = (double) resultMap.get("change");
+            model.addAttribute("change", change);
+            return "buy/success";
+        }
+        model.addAttribute("money", money);
+        return "buy/failure";
     }
 }

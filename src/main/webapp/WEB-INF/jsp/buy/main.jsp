@@ -6,12 +6,23 @@
     <link rel="stylesheet" type="text/css" href="../resources/css/mainpage.css"/>
     <link rel="stylesheet" type="text/css" href="../resources/css/common.css"/>
     <link rel="stylesheet" type="text/css" href="../resources/css/itemlabel.css"/>
+    <script src="../resources/js/jquery-3.3.1.min.js"></script>
     <title>mainpage</title>
-    <%-- 表单提交 --%>
     <script type="text/javascript">
-        function submitForm() {
-            $('#info').submit();
+
+        <%-- 时间更新 --%>
+        var serverTime = new Date();
+
+        function updateTime() {
+            /// Increment serverTime by 1 second and update the html for '#time'
+            serverTime = new Date(serverTime.getTime() + 1000);
+            $('#time').html(serverTime.toLocaleDateString() + " " + serverTime.toLocaleTimeString());
         }
+
+        $(function () {
+            updateTime();
+            setInterval(updateTime, 1000);
+        });
     </script>
 </head>
 
@@ -25,35 +36,33 @@
                     <tr>
                         <c:forEach items="${commodityList}" var="commodity">
                             <th>
-                                <form id="info" action="../buy/info" method="post">
-                                    <input type="hidden" name="id" value="${commodity.id}">
-                                    <a href="#" onclick="submitForm()">
-                                        <div class="itemlabel bordered color_user">
+                                <a href="/buy/info?id=${commodity.id}">
+                                    <div class="itemlabel bordered color_user">
                                             <%-- 图片 --%>
-                                            <div class="itemlabel_thumbnailpic bordered">
-                                                <img class="greyfade fill"
-                                                     src="../images/${commodity.picture}"/>
-                                            </div>
-                                            <div>
-                                                <%-- 价钱 --%>
-                                                <div class="itemlabel_price">
-                                                    ¥${commodity.price}
-                                                </div>
-                                                <%-- 数量 --%>
-                                                <c:if test="${commodity.number > 0}">
-                                                    <div class="itemlabel_outofstock">
-                                                            ${commodity.number}
-                                                    </div>
-                                                </c:if>
-                                                <c:if test="${commodity.number <= 0}">
-                                                    <div class="itemlabel_outofstock">
-                                                        缺货
-                                                    </div>
-                                                </c:if>
-                                            </div>
+                                        <div class="itemlabel_thumbnailpic bordered">
+                                            <img class="greyfade fill"
+                                                 src="../images/${commodity.picture}"/>
                                         </div>
-                                    </a>
-                                </form>
+                                        <div>
+                                                <%-- 价钱 --%>
+                                            <div class="itemlabel_price">
+                                                ¥${commodity.price}
+                                            </div>
+                                                <%-- 数量 --%>
+                                            <c:if test="${commodity.number > 0}">
+                                                <div class="itemlabel_outofstock">
+                                                        ${commodity.number}
+                                                </div>
+                                            </c:if>
+                                            <c:if test="${commodity.number <= 0}">
+                                                <div class="itemlabel_outofstock">
+                                                    缺货
+                                                </div>
+                                            </c:if>
+                                        </div>
+                                    </div>
+                                </a>
+
                             </th>
                         </c:forEach>
                     </tr>
@@ -65,7 +74,9 @@
 </div>
 <footer class="mainpage_lower bordered">
     <div class="mainpage_lower_desc font20">
-        <div style="margin:5px;">16:00 欢迎使用自动售货机，请选择商品</div>
+        <div style="margin:5px;">
+            <span id="time"></span> 欢迎使用自动售货机，请选择商品
+        </div>
     </div>
     <div class="mainpage_lower_button">
         <a href="../manage/login.jsp">
@@ -74,5 +85,5 @@
     </div>
 </footer>
 </body>
-<script src="../resources/js/jquery-3.3.1.min.js"></script>
+
 </html>
