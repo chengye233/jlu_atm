@@ -7,7 +7,20 @@ import jlu.vending.entity.Admin;
  *
  */
 public interface AdminDao {
+    /**
+     * 通过id查询{@link Admin}管理员
+     * @param id 要查询的管理员id
+     * @return Admin 返回的管理员对象
+     */
+    Admin selectById(Integer id);
 
+    /**
+     * 通过用户名查询{@link Admin}管理员
+     * @param name 要查询的管理员id
+     * @return Admin 返回的管理员对象
+     */
+    Admin selectByName(String name);
+    
     /**
      * 插入{@link Admin}管理员
      * @param admin 要插入的管理员

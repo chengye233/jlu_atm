@@ -11,6 +11,19 @@
         <result property="picture" column="picture"/>
     </resultMap>
 
+    <!-- 增加商品 -->
+    <insert id="addCommodity" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO commodity(name, price, number, state, picture)
+        VALUES(#{com.name}, #{com.price}, #{com.number}, #{com.state}, #{com.picture})
+    </insert>
+
+    <!-- 修改商品 -->
+    <update id="modifyById">
+        UPDATE commodity
+        SET name = #{com.name}, price = #{com.price}, number = #{com.number}, state = #{com.state}, picture = #{com.picture}
+        WHERE id=#{id}
+    </update>
+
     <!-- 查询前n个 -->
     <select id="selectTopN" resultMap="commodityMap">
         SELECT c.id, c.name, c.price, c.number, c.state, c.picture

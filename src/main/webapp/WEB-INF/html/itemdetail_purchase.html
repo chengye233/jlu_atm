@@ -6,14 +6,15 @@
     <link rel="stylesheet" type="text/css" href="../resources/css/common.css" />
   </head>
 
-  <body>
+  <body onkeypress="insertCoin(event)">
+
       <div class="itemdetail_left">
         <div align="center" style="margin:5px;">
           <br/>
           <div class="font30">&lt;此处应有商品名&gt;</div>
           <br/>
           <span class="font20">售价：¥</span>
-          <span class="font20">2.00</span>
+          <span id="priceText" class="font20">2.00</span>
           <br/>
           <br/>
           <div class="itemdetail_thumbnailpic color_user bordered">
@@ -28,19 +29,20 @@
           <br/>
           <div>
             <span class="font30">已投&nbsp;</span>
-            <span class="font30" style="color: red;">1.50</span>
+            <span id="coinText" class="font30" style="color: red;">1.50</span>
             <span class="font30">&nbsp;元</span>
           </div>
           <br/>
           <div>请投入1元、5角或1角硬币</div>
           <br/>
-          <input class="itemdetail_sumbitpurchasebutton bordered color_notavailable font30" type="button" value="您的投币不足" onclick="" />
+          <input id="purchaseBtn" class="itemdetail_sumbitpurchasebutton bordered color_notavailable font30" type="button" value="您的投币不足" disabled="disabled" onclick="" />
           <br/>
           <br/>
           <input class="itemdetail_cancelbutton bordered color_user font20" type="button" value="取消并退币" onclick="" />
         </div>
       </div>
 
+      <script src="./script/itemdetail_purchase.js"></script>
   </body>
 
 </html>
