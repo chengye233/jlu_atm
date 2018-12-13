@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="jlu.vending.dao.AdminDao">
+    <!-- 查询 -->
+    <select id="selectById" resultType="jlu.vending.entity.Admin">
+        SELECT a.id, a.name, a.password
+        FROM admin AS a
+        WHERE id = #{id}
+    </select>
+
+    <select id="selectByName" resultType="jlu.vending.entity.Admin">
+        SELECT a.id, a.name, a.password
+        FROM admin AS a
+        WHERE name = #{name}
+    </select>
+
+    <!-- 插入 -->
+    <insert id="insertAdmin" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO
+        <trim prefix="(" suffix=")" suffixOverrides="," ></trim>
+        admin(
+            <if test="name != null">
+              name
+            </if> ,
+            <if test="password != null">
+              password
+            </if>)
+        VALUES (
+            <if test="name != null">
+                #{name}
+            </if> ,
+            <if test="password != null">
+                #{password}
+            </if>
+        )
+    </insert>
+</mapper>
