@@ -6,7 +6,7 @@
     <link rel="stylesheet" type="text/css" href="../resources/css/mainpage.css"/>
     <link rel="stylesheet" type="text/css" href="../resources/css/common.css"/>
     <link rel="stylesheet" type="text/css" href="../resources/css/itemlabel.css"/>
-    <script src="../resources/js/jquery-3.3.1.min.js"></script>
+    <script src="../resources/js/jquery-3.3.1.slim.js"></script>
     <title>mainpage</title>
     <script type="text/javascript">
 
@@ -40,7 +40,7 @@
                                     <div class="itemlabel bordered color_user">
                                             <%-- 图片 --%>
                                         <div class="itemlabel_thumbnailpic bordered">
-                                            <img class="greyfade fill"
+                                            <img class="fill"
                                                  src="../images/${commodity.picture}"/>
                                         </div>
                                         <div>
