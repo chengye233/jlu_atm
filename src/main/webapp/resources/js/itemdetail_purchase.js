@@ -11,7 +11,7 @@ function insertCoin(event){
 		default: return;
 	}
 	document.getElementById('coinText').innerHTML=String(currentCoinValue.toFixed(2));
-	if(currentCoinValue>itemPrice) {
+	if(currentCoinValue>=itemPrice) {
 		enablePurchaseBtn();
 	}
 	var cancelBtn = document.getElementById('cancelBtn');
