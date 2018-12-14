@@ -40,7 +40,7 @@
                                     <div class="itemlabel bordered color_user">
                                             <%-- 图片 --%>
                                         <div class="itemlabel_thumbnailpic bordered">
-                                            <img class="greyfade fill"
+                                            <img class="fill"
                                                  src="../images/${commodity.picture}"/>
                                         </div>
                                         <div>
