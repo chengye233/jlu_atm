@@ -6,22 +6,6 @@
 <head>
     <link rel="stylesheet" type="text/css" href="../resources/css/itemdetail.css"/>
     <link rel="stylesheet" type="text/css" href="../resources/css/common.css"/>
-    <script src="../resources/js/jquery-3.3.1.min.js"></script>
-    <script src="../resources/fileupload/js/vendor/jquery.ui.widget.js"></script>
-    <script src="../resources/fileupload/js/jquery.iframe-transport.js"></script>
-    <script src="../resources/fileupload/js/jquery.fileupload.js"></script>
-    <script>
-        $(function () {
-            $('#fileupload').fileupload({
-                dataType: 'json',
-                done: function (e, data) {
-                    $.each(data.result.files, function (index, file) {
-                        $('<p/>').text(file.name).appendTo(document.body);
-                    });
-                }
-            });
-        });
-    </script>
 </head>
 
 <body>

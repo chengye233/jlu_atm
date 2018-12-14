@@ -6,7 +6,7 @@
     <link rel="stylesheet" type="text/css" href="../resources/css/mainpage.css"/>
     <link rel="stylesheet" type="text/css" href="../resources/css/common.css"/>
     <link rel="stylesheet" type="text/css" href="../resources/css/itemlabel.css"/>
-    <script src="../resources/js/jquery-3.3.1.min.js"></script>
+    <script src="../resources/js/jquery-3.3.1.slim.js"></script>
     <title>mainpage</title>
     <script type="text/javascript">
 
